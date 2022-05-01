@@ -1,0 +1,50 @@
+{
+  "name": "electron-project-template",
+  "version": "0.1.0",
+  "description": "Electronのソフトを作るときのテンプレート",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions",
+    "start": "npx electron ."
+  },
+  "keywords": [],
+  "author": "mf7cli",
+  "license": "ISC",
+  "build": {
+    "publish": {
+      "provider": "github",
+      "owner": "mf-3d",
+      "repo": "runa-browser",
+      "releaseType": "release"
+    },
+    "asar": false,
+    "appId": "tk.mf7cli.runa-browser",
+    "productName": "Runa-Browser",
+    "files": [
+      "main.js",
+      "src/",
+      "package.json",
+      "package-lock.json",
+      "node_modules/"
+    ],
+    "win": {
+      "icon": "src/image/logo.ico",
+      "target": "nsis",
+      "legalTrademarks": "Copyright 2022 mf7cli."
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "electron-store": "^8.0.1",
+    "express": "^4.18.0",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "electron": "^18.1.0",
+    "electron-builder": "^23.0.3"
+  }
+}
